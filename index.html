@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imtiaz Uddin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--Navbar -->
+    <nav class="relative">
+      <ul
+        class="flex hidden items-center justify-center flex-col py-16 mt-16 md:justify-evenly"
+      >
+        <li class="p-5"><a href="#home">Home</a></li>
+        <li class="p-5"><a href="#about">About</a></li>
+        <li class="p-5"><a href="#projects">All Projects</a></li>
+        <li class="p-5"><a href="#contact">Contact</a></li>
+      </ul>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-10 w-10 absolute right-3 top-3"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </nav>
+    <!--intro-->
+    <div id="intro" class="flex flex-col px-5 pt-14 text-gray-500">
+      <div class="pb-5">
+        <img src="./images/person.jpg" alt="person" />
+      </div>
+      <div class="">
+        <h1 class="text-center text-2xl">Imtiaz Uddin</h1>
+        <p class="text-center text-gray-400 pt-0 pb-3">Frontend developer</p>
+
+        <p class="leading-loose">
+          Hi there! Welcome to my portfolio page.I'm a frontend developer with
+          an eye for minimalistic design. Below you can see some of my Fav
+          projects, mt skills and the services I can provide to you in the
+          future.
+        </p>
+      </div>
+    </div>
+    <!--Tabs-->
+    <div class="flex justify-center items-center py-4">
+      <div x-data="setup()">
+        <ul class="flex justify-center items-center">
+          <template x-for="(tab, index) in tabs" :key="index">
+            <li
+              class="cursor-pointer py-2 px-4 text-gray-500 border-b-8"
+              :class="activeTab===index ? 'text-green-500 border-green-500' : ''"
+              @click="activeTab = index"
+              x-text="tab"
+            ></li>
+          </template>
+        </ul>
+
+        <div class="w-90 bg-white mt-4 text-center mx-auto p-4">
+          <div x-show="activeTab===0">
+            <div id="projects" class="border pb-5 mb-6">
+              <img src="./images/project01.jpg" alt="project" />
+              <div>
+                <p class="text-2xl py-5 text-gray-500">Project Name</p>
+                <p class="text-gray-400 pb-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, Lorem, ipsum dolor sit amet consectetur adipisicing.
+                </p>
+                <button
+                  class="mx-2 my-2 bg-gray-100 transition duration-150 ease-in-out hover:bg-gray-200 rounded border border-gray-300 text-gray-600 px-6 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 text-xl"
+                >
+                  Live
+                </button>
+                <button
+                  class="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 text-xl"
+                >
+                  Code
+                </button>
+              </div>
+            </div>
+            <div id="projects" class="border pb-5 mb-6">
+              <img src="./images/project01.jpg" alt="project" />
+              <div>
+                <p class="text-2xl py-5 text-gray-500">Project Name</p>
+                <p class="text-gray-400 pb-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, Lorem, ipsum dolor sit amet consectetur adipisicing.
+                </p>
+                <button
+                  class="mx-2 my-2 bg-gray-100 transition duration-150 ease-in-out hover:bg-gray-200 rounded border border-gray-300 text-gray-600 px-6 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 text-xl"
+                >
+                  Live
+                </button>
+                <button
+                  class="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 text-xl"
+                >
+                  Code
+                </button>
+              </div>
+            </div>
+            <div id="projects" class="border pb-5">
+              <img src="./images/project01.jpg" alt="project" />
+              <div>
+                <p class="text-2xl py-5 text-gray-500">Project Name</p>
+                <p class="text-gray-400 pb-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, Lorem, ipsum dolor sit amet consectetur adipisicing.
+                </p>
+                <button
+                  class="mx-2 my-2 bg-gray-100 transition duration-150 ease-in-out hover:bg-gray-200 rounded border border-gray-300 text-gray-600 px-6 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 text-xl"
+                >
+                  Live
+                </button>
+                <button
+                  class="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 text-xl"
+                >
+                  Code
+                </button>
+              </div>
+            </div>
+          </div>
+          <div x-show="activeTab===1">Content 2</div>
+          <div x-show="activeTab===2">Content 3</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
